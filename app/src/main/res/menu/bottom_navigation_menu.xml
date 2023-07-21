@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/page_home"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/page_invest"
+        android:enabled="true"
+        android:icon="@drawable/currencyrupee48px"
+        android:title="Invest"/>
+    <item
+        android:id="@+id/page_quiz"
+        android:enabled="true"
+        android:icon="@drawable/sports_esports48px"
+        android:title="Quiz"/>
+    <item
+        android:id="@+id/page_budgeting"
+        android:enabled="true"
+        android:icon="@drawable/account_balance_wallet48px"
+        android:title="Budgeting"/>
+    <item
+        android:id="@+id/page_learn"
+        android:enabled="true"
+        android:icon="@drawable/local_library48px"
+        android:title="Learn"/>
+
+</menu>
