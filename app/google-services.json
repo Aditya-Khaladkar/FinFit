@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "221686847980",
+    "project_id": "finfit-6bcee",
+    "storage_bucket": "finfit-6bcee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221686847980:android:95af1435f52645386348c9",
+        "android_client_info": {
+          "package_name": "com.example.finfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221686847980-l096rsovelnbvjmiqo55jqmivbhlhqts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN_wqayVjqZZI47dAAoNFwiuywhpRozLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221686847980-l096rsovelnbvjmiqo55jqmivbhlhqts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
