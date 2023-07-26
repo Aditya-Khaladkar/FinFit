@@ -8,6 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.finfit.R
 import com.example.finfit.auth.RegQues.RegQuestions
 import com.example.finfit.databinding.ActivityRegisterBinding
+import com.example.finfit.util.FirebaseObj
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -19,7 +20,6 @@ class Register : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val auth = FirebaseAuth.getInstance()
         val db = FirebaseFirestore.getInstance()
 
         binding.btnSignUp.setOnClickListener {
@@ -37,10 +37,10 @@ class Register : AppCompatActivity() {
             userData["email"] = email
             userData["password"] = password
 
-            auth.createUserWithEmailAndPassword(email, password)
+            FirebaseObj.auth.createUserWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
                     // storing user details to firebase cloud
-                    db.collection("user_data").document(auth.currentUser?.uid.toString())
+                    db.collection("user_data").document(FirebaseObj.auth.currentUser?.uid.toString())
                         .set(userData)
                         .addOnSuccessListener {
                             startActivity(Intent(this, RegQuestions::class.java))
