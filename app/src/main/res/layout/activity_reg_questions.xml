@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/layoutDoYouEarn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -24,19 +25,21 @@
                 android:textColor="@color/black"
                 android:textSize="25sp" />
 
-            <LinearLayout
+            <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.google.android.material.button.MaterialButton
+                <RadioButton
+                    android:id="@+id/doYouEarnRadioYES"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="YES"
                     app:cornerRadius="10dp" />
 
-                <com.google.android.material.button.MaterialButton
+                <RadioButton
+                    android:id="@+id/doYouEarnRadioNO"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -44,11 +47,12 @@
                     android:text="NO"
                     app:cornerRadius="10dp" />
 
-            </LinearLayout>
+            </RadioGroup>
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layoutHowMuchDoYouEarn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -80,6 +84,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layoutIsThereEMI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -93,19 +98,21 @@ in your life ?"
                 android:textColor="@color/black"
                 android:textSize="25sp" />
 
-            <LinearLayout
+            <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.google.android.material.button.MaterialButton
+                <RadioButton
+                    android:id="@+id/isThereEMIRadioYES"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="YES"
                     app:cornerRadius="10dp" />
 
-                <com.google.android.material.button.MaterialButton
+                <RadioButton
+                    android:id="@+id/isThereEMIRadioNO"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -113,14 +120,14 @@ in your life ?"
                     android:text="NO"
                     app:cornerRadius="10dp" />
 
-            </LinearLayout>
+            </RadioGroup>
 
         </LinearLayout>
 
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSignUp"
+        android:id="@+id/btnSignUpNext"
         app:cornerRadius="19dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

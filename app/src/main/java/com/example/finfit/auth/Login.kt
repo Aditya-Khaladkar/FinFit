@@ -26,7 +26,7 @@ class Login : AppCompatActivity() {
             if (email.isEmpty() && password.isEmpty()) {
                 Toast.makeText(this, "Enter email and password", Toast.LENGTH_LONG).show()
             } else {
-                auth.createUserWithEmailAndPassword(email, password)
+                auth.signInWithEmailAndPassword(email, password)
                     .addOnSuccessListener {
                         startActivity(Intent(this, Dashboard::class.java))
                         finish()
