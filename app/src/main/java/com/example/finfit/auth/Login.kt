@@ -4,11 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.finfit.R
 import com.example.finfit.databinding.ActivityLoginBinding
 import com.example.finfit.util.FirebaseObj
-import com.example.finfit.view.Dashboard
-import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
