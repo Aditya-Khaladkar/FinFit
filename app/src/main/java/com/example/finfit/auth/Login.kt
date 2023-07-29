@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.finfit.databinding.ActivityLoginBinding
 import com.example.finfit.util.FirebaseObj
+import com.example.finfit.view.Dashboard
 
 class Login : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
@@ -14,6 +15,11 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        binding.txtNewUser.setOnClickListener {
+            startActivity(Intent(this, Register::class.java))
+            finish()
+        }
 
         binding.btnSignIn.setOnClickListener {
             val email: String = binding.logEmail.text.toString()

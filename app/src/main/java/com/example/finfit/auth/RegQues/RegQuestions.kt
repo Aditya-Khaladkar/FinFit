@@ -1,5 +1,6 @@
 package com.example.finfit.auth.RegQues
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,13 +8,13 @@ import android.widget.RadioButton
 import com.example.finfit.R
 import com.example.finfit.databinding.ActivityRegQuestionsBinding
 import com.example.finfit.util.FirebaseObj
+import com.example.finfit.view.Dashboard
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class RegQuestions : AppCompatActivity() {
     lateinit var binding: ActivityRegQuestionsBinding
     var counter = 0
-    lateinit var radioButton: RadioButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,20 +29,26 @@ class RegQuestions : AppCompatActivity() {
         binding.apply {
 
             // condition for radio button
-            val intSelectButton: Int = doYouEarnRadioGRP.checkedRadioButtonId
-
-            radioButton = findViewById(intSelectButton)
-
-            if (radioButton.text.equals("YES")) {
-                layoutHowMuchDoYouEarn.visibility = View.VISIBLE
+            doYouEarnRadioGRP.setOnCheckedChangeListener { radioGroup, i ->
+                when (i) {
+                    R.id.doYouEarnRadioYES -> layoutHowMuchDoYouEarn.visibility = View.VISIBLE
+                    R.id.doYouEarnRadioNO -> layoutHowMuchDoYouEarn.visibility = View.GONE
+                }
             }
 
             btnSignUpNext.setOnClickListener {
                 counter++
 
-                if (counter == 1) {
-                    layoutDoYouEarn.visibility = View.GONE
-                    layoutHowMuchDoYouEarn.visibility = View.GONE
+                when (counter) {
+                    1 -> {
+                        layoutDoYouEarn.visibility = View.GONE
+                        layoutHowMuchDoYouEarn.visibility = View.GONE
+                        layoutIsThereEMI.visibility = View.VISIBLE
+                    }
+                    2 -> {
+                        startActivity(Intent(applicationContext, Dashboard::class.java))
+                        finish()
+                    }
                 }
             }
         }
